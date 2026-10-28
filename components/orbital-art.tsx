@@ -1,3 +1,10 @@
+import Image from 'next/image';
+import { assetPath } from '@/lib/asset-path';
+
+export function OrbitalArt() {
+  return <div className="orbital-art orbital-art-image"><Image src={assetPath('/images/hero-orbital-v2.webp')} alt="Przestrzenna magentowa kula, mniejsze perłowe i różowe sfery, delikatne orbity i transparentne warstwy" width={1536} height={1024} priority sizes="(max-width: 900px) 100vw, 62vw"/></div>;
+}
+
 const satellites = [
   [296, 58, 20, 'pink'], [371, 104, 10, 'pink'], [480, 127, 31, 'silver'],
   [628, 194, 36, 'pink'], [521, 329, 24, 'pink'], [536, 430, 16, 'pink'],
@@ -5,7 +12,7 @@ const satellites = [
   [119, 204, 19, 'pink'], [203, 174, 15, 'pink'], [679, 324, 34, 'silver'],
 ] as const;
 
-export function OrbitalArt() {
+export function OrbitalSvgArt() {
   return <div className="orbital-art" role="img" aria-label="The Impact Effect: przestrzenna magentowa kula otoczona delikatnymi orbitami i mniejszymi sferami">
     <svg viewBox="0 0 720 510" fill="none" aria-hidden="true">
       <defs>

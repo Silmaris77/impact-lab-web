@@ -57,3 +57,7 @@ npm run preview:pages
 ```
 
 Podgląd wersji Pages: http://127.0.0.1:3002/impact-lab-web/. Workflow publikacji uruchamiany jest ręcznie na GitHub.
+
+## Aktualna organizacja treści
+
+Główna prezentacja oferty jest w trzech kartach. `ServiceDetails` nie renderuje już osobnej listy usług: pokazuje jeden panel wybrany przez kotwicę z karty. `CollaborationProcess` zachowuje cztery kroki współpracy. Hero ponownie korzysta z orbitalnej kompozycji, jako osobnego zoptymalizowanego pliku WebP. Starsze warianty grafiki pozostają nieaktywne.

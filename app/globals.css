@@ -250,3 +250,43 @@ summary:hover { color:var(--magenta); }
   .founder-copy .button { padding-inline:18px; }
 }
 
+
+/* Consolidated offer: the cards reveal one contextual panel, not a second service list. */
+.offer-service-panels:has(.offer-service-panel:not([hidden])) { margin-top:22px; }
+.offer-service-panel[hidden] { display:none; }
+.offer-service-panel { background:#fff; border:1px solid #e8e1f0; border-radius:26px; padding:30px; scroll-margin-top:24px; }
+.service-panel-heading { display:flex; align-items:flex-start; justify-content:space-between; gap:22px; margin-bottom:16px; }
+.service-panel-heading .eyebrow { font-size:11px; margin-bottom:10px; }
+.service-panel-heading h3 { font-size:28px; margin:0; }
+.panel-close { display:grid; place-items:center; min-width:44px; min-height:44px; border:1px solid #ddd5e8; border-radius:50%; }
+.panel-close:hover { background:var(--lavender); }
+.service-panel-lead { color:#494052; font-size:16px; line-height:1.65; max-width:850px; margin:0 0 26px; }
+.service-columns h4,.service-outcome h4 { font-size:18px; line-height:1.3; font-weight:750; margin:0 0 12px; letter-spacing:-.4px; }
+.offer-service-panel>.button { white-space:normal; text-align:center; }
+.methods article { display:flex; flex-direction:column; }
+.methods svg { flex-shrink:0; }
+.methods h3 { min-height:42px; }
+.contact-orbital { isolation:isolate; min-height:215px; background:linear-gradient(110deg,#faedf7,#f7f0fb 65%,#efeaf7); }
+.contact-orbital::after { display:none; }
+.contact-orbital>div:first-child,.contact-orbital>.button,.contact-orbital .contact-details { position:relative; z-index:2; }
+.contact-sphere { position:absolute; z-index:0; pointer-events:none; width:245px; height:245px; border-radius:50%; left:59%; bottom:-83px; background:radial-gradient(circle at 73% 23%,#ffc3e5 0%,#ff53ad 14%,#ed007b 38%,#ae004c 74%,#e83b8d 94%,#ffacd6); box-shadow:inset -12px -12px 24px #8c00352b,0 0 0 24px #ed007a06,0 0 0 48px #ed007a04; }
+.contact-orbital .contact-details { font-size:15px; line-height:1.5; }
+.contact-orbital .contact-details span { color:#5e526b; font-size:14px; }
+@media(max-width:900px) { .contact-sphere { left:auto; right:-35px; bottom:-100px; }.contact-orbital .contact-details { padding-right:135px; } }
+@media(max-width:600px) {
+  .offer-service-panel { padding:24px 19px; border-radius:22px; }
+  .service-panel-heading h3 { font-size:25px; }
+  .service-panel-heading .eyebrow { font-size:10px; letter-spacing:1.8px; }
+  .contact-orbital { padding-bottom:35px; }
+  .contact-sphere { width:210px; height:210px; right:-100px; bottom:-84px; }
+  .contact-orbital .contact-details { padding-right:45px; }
+  .methods h3 { min-height:42px; }
+}
+
+/* Reference-led orbital hero: a standalone high-quality 3D asset. */
+.orbital-art-image { width:calc(100% + 95px); margin-top:-40px; margin-left:-20px; mask-image:linear-gradient(to right,transparent,#000 8%,#000 95%,transparent); }
+.orbital-art-image img { display:block; width:100%; height:auto; }
+@media(min-width:1400px) { .orbital-art-image { margin-top:-30px; } }
+@media(max-width:1150px) { .orbital-art-image { margin-top:-15px; width:calc(100% + 65px); } }
+@media(max-width:900px) { .orbital-art-image { width:min(690px,calc(100% + 30px)); max-width:none; margin:10px -15px 0; justify-self:center; mask-image:linear-gradient(to bottom,transparent,#000 5%,#000 95%,transparent); } }
+@media(max-width:600px) { .orbital-art-image { width:calc(100% + 28px); margin:12px -14px 6px; } }

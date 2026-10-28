@@ -27,3 +27,13 @@ To ograniczony przegląd implementacji i ręczne sprawdzenia przeglądarkowe, ni
 - Ewentualne docelowe fotografie usług i banera kontaktowego.
 - Formularz, polityka prywatności oraz publiczne metadane i domena przed publikacją.
 - Aktualnie nie ma publikacji, zewnętrznej analityki ani formularza wysyłającego dane.
+
+## Iteracja: powrót do referencji i uproszczenie strony
+
+- Hero korzysta z osobnego zasobu `public/images/hero-orbital-v2.webp` (około 64 kB), przygotowanego na podstawie zatwierdzonej wizualizacji. Nie jest zrzutem strony; nie zawiera tekstów ani elementów UI.
+- Trzy filary pozostają główną prezentacją oferty. Szczegóły otwierają się w pojedynczym panelu bezpośrednio pod kartami. Usunięto powtórną sekcję „Rozwój, który ma znaczenie”.
+- Zachowane kotwice `#oferta-szkolenia`, `#oferta-diagnoza`, `#oferta-projektowanie`; linki otwierają odpowiedni panel i przenoszą do niego fokus. Zamknięcie wraca do oferty i przycisku karty.
+- „Dlaczego to działa?”: Diagnoza, Konsultacje i doradztwo, Warsztaty, Wdrożenia.
+- Czteroetapowy proces współpracy zachowany jako osobna sekcja.
+- CTA wykorzystuje przestrzenną sferę z gradientowym światłem. Logo i oryginalny plik portretu bez zmian.
+- Kontrola w przeglądarce: 320, 390, 768, 1024 i 1440 px; brak poziomego przewijania i uciętych kontrolowanych nagłówków. Metodologia ma 4 elementy, proces ma 4 kroki, wszystkie kotwice mają cel.
