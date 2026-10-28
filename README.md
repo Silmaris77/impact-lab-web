@@ -1,6 +1,6 @@
-# Impact Lab — iteracja 1
+# Impact Lab — podgląd lokalny
 
-Lokalna strona główna: Next.js App Router, TypeScript, Tailwind CSS, Lucide i lokalny Manrope (polskie znaki). Bez CMS, formularza i publikacji.
+Next.js App Router, TypeScript, Tailwind CSS, Lucide i lokalny Manrope z polskimi znakami. Bez CMS, formularza i publikacji.
 
 ## Uruchomienie
 
@@ -9,26 +9,39 @@ npm install
 npm run dev
 ```
 
-Podgląd: http://127.0.0.1:3000
+Tryb developerski: http://127.0.0.1:3000
 
 ```powershell
 npm run lint
 npm run build
-npm start
+npm start -- --port 3001
 ```
+
+Podgląd produkcyjny: http://127.0.0.1:3001
+
+Webpack jest wybrany jawnie z powodu błędu procesów pomocniczych Turbopack w lokalnym środowisku Windows.
 
 ## Struktura
 
-- `app/`: strona, metadane i globalne tokeny oraz style responsywne.
-- `components/header.tsx`: nawigacja desktop/mobile, klawiatura i Escape.
-- `components/hero.tsx`: kompozycja hero i CTA do istniejących sekcji.
-- `components/orbital-art.tsx`: niezależny SVG, gradienty sfer, orbity i głębia.
-- `components/section-scaffolds.tsx`: szkielety sekcji do kolejnej iteracji.
+- `app/`: strona, metadane, globalne tokeny i style responsywne.
+- `components/header.tsx`: oryginalne logo, nawigacja desktop/mobile i Escape.
+- `components/hero.tsx`: hero i CTA do sekcji.
+- `components/orbital-art.tsx`: niezależny SVG, gradientowe sfery, światło i orbity.
+- `components/section-scaffolds.tsx`: oferta, metodologia, doświadczenie, założycielka, kontakt i stopka.
+- `components/anchor-details.tsx`: rozwijanie opisów po wejściu z kotwicy.
 - `lib/content.ts`: treści hero i nawigacji.
-- `public/`: miejsce na oryginalne zasoby marki.
+- `public/`: dostarczone logo czarno-magentowe i portret Patrycji, bez zmian w plikach źródłowych.
 
-## Materiały do dostarczenia
+## Źródła i pozostałe materiały
 
-Oryginalne logo na jasnym tle, oryginalny portret Patrycji, brief `impact_Lab_www.docx`, portfolio PPTX (zwłaszcza slajd 7), zdjęcia usługowe wraz z prawami do wykorzystania, zatwierdzone treści i dane kontaktowe. Logo i portret mają jawnie oznaczone miejsca. Brak fikcyjnych statystyk, referencji i cytatów.
+Wykorzystano brief źródłowy DOCX i portfolio PPTX, w tym metodologię ze slajdu 7. Kontakt, data rozpoczęcia działalności zawodowej i opis doświadczenia pochodzą z tych materiałów. Teksty kart są skróconą adaptacją źródeł. Nie przeniesiono fikcyjnych KPI ani cytatów z wizualizacji.
 
-Referencja estetyczna nie jest źródłem danych. Pozostałe sekcje są celowo szkieletowe. Metadane blokują indeksowanie wersji roboczej. Wymaga to zmiany przed przyszłą publikacją.
+Karty usług wykorzystują zdjęcia ilustracyjne z Pexels. Źródła i autorzy: `public/images/SOURCES.md`. Nie przedstawiają realizacji ani zespołu Impact Lab. Nadal potrzebne jest zdjęcie do banera kontaktowego; obecnie baner pokazuje dane kontaktowe. Portret jest kadrowany wyłącznie przez CSS, bez modyfikacji twarzy. Metadane blokują indeksowanie wersji roboczej.
+
+
+## Rozwinięcie oferty i ścieżka współpracy
+
+- Treści trzech filarów i czterech kroków współpracy: `lib/services.ts`.
+- Widok rozwinięć: `components/service-details.tsx`.
+- Przykłady zakresów pochodzą z briefu DOCX, a projekty Patrycji z portfolio PPTX. Opisy są adaptacją redakcyjną do strony głównej. Cele współpracy nie są przedstawiane jako zmierzone rezultaty wcześniejszych projektów.
+- Szczegóły oferty i proces współpracy znajdują się przed końcowym kontaktem.
