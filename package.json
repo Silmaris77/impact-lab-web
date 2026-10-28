@@ -6,7 +6,10 @@
     "dev": "next dev --webpack --hostname 127.0.0.1",
     "build": "next build --webpack",
     "start": "next start --hostname 127.0.0.1",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "build:pages": "node scripts/build-pages.mjs",
+    "check:pages": "node scripts/check-pages.mjs",
+    "preview:pages": "node scripts/preview-pages.mjs"
   },
   "keywords": [],
   "author": "",

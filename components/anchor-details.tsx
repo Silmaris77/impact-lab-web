@@ -6,7 +6,10 @@ import { useEffect } from 'react';
 export function AnchorDetails() {
   useEffect(() => {
     const reveal = () => {
-      const target = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
+      let id: string;
+      try { id = decodeURIComponent(window.location.hash.slice(1)); }
+      catch { return; }
+      const target = document.getElementById(id);
       if (target instanceof HTMLDetailsElement) {
         target.open = true;
         requestAnimationFrame(() => target.scrollIntoView({ block: 'start' }));
@@ -14,7 +17,15 @@ export function AnchorDetails() {
     };
     reveal();
     window.addEventListener('hashchange', reveal);
-    return () => window.removeEventListener('hashchange', reveal);
+    const revealAgain = (event: MouseEvent) => {
+      const link = (event.target as Element).closest('a[href^="#"]');
+      if (link?.getAttribute('href') === window.location.hash) reveal();
+    };
+    document.addEventListener('click', revealAgain);
+    return () => {
+      window.removeEventListener('hashchange', reveal);
+      document.removeEventListener('click', revealAgain);
+    };
   }, []);
   return null;
 }

@@ -15,7 +15,7 @@ export function ServiceDetails() {
             <div><h3>Kiedy warto?</h3><p>{service.need}</p><h3>Obszary pracy</h3><ul>{service.areas.map(area => <li key={area}><Check size={16} aria-hidden="true"/>{area}</li>)}</ul></div>
             <div><h3>Przykładowe zakresy</h3><ul>{service.examples.map(example => <li key={example}><Check size={16} aria-hidden="true"/>{example}</li>)}</ul><h3>Jak pracujemy?</h3><p>{service.approach}</p></div>
           </div>
-          <div className="service-outcome"><h3>Co ma dać ta praca?</h3><p>{service.outcome}</p></div>
+          <div className="service-outcome"><h3>Cel współpracy</h3><p>{service.outcome}</p></div>
           <a className="button button-primary" href="#kontakt">Porozmawiajmy o Twoim projekcie <ArrowRight size={17}/></a>
         </div>
       </details>)}

@@ -45,3 +45,15 @@ Karty usług wykorzystują zdjęcia ilustracyjne z Pexels. Źródła i autorzy: 
 - Widok rozwinięć: `components/service-details.tsx`.
 - Przykłady zakresów pochodzą z briefu DOCX, a projekty Patrycji z portfolio PPTX. Opisy są adaptacją redakcyjną do strony głównej. Cele współpracy nie są przedstawiane jako zmierzone rezultaty wcześniejszych projektów.
 - Szczegóły oferty i proces współpracy znajdują się przed końcowym kontaktem.
+
+## GitHub Pages
+
+Konfiguracja, lokalny podgląd statyczny i instrukcja publikacji: [GITHUB_PAGES.md](GITHUB_PAGES.md).
+
+```powershell
+npm run build:pages
+npm run check:pages
+npm run preview:pages
+```
+
+Podgląd wersji Pages: http://127.0.0.1:3002/impact-lab-web/. Workflow publikacji uruchamiany jest ręcznie na GitHub.

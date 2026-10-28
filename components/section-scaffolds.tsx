@@ -1,3 +1,4 @@
+import { assetPath } from '@/lib/asset-path';
 import Image from 'next/image';
 import { ArrowRight, ChartNoAxesColumnIncreasing, Lightbulb, UsersRound, Search, MessagesSquare, Presentation, GraduationCap } from 'lucide-react';
 import { navigation } from '@/lib/content';
@@ -27,7 +28,7 @@ export function SectionScaffolds() {
       <section id="oferta" className="offer scaffold" aria-labelledby="offer-title">
         <div className="section-heading"><h2 id="offer-title">Trzy filary, jeden cel <span>— trwała zmiana.</span></h2><a className="button button-outline" href="#specjalizacje">Zobacz całą ofertę <ArrowRight size={16}/></a></div>
         <div className="pillar-grid">{pillars.map(({ id,title,Icon,text }, index) => <article id={id} key={id} className="pillar">
-          <div className={`pillar-visual visual-${index}`}><Image src={servicePhotos[index].src} alt={servicePhotos[index].alt} fill sizes="(max-width: 600px) 55vw, (max-width: 900px) 18vw, 240px"/></div>
+          <div className={`pillar-visual visual-${index}`}><Image src={assetPath(servicePhotos[index].src)} alt={servicePhotos[index].alt} fill sizes="(max-width: 600px) 55vw, (max-width: 900px) 18vw, 240px"/></div>
           <Icon className="pillar-icon" size={43} strokeWidth={1.3}/><h3>{title}</h3><span className="small-rule"/>
           <div className="pillar-bottom"><p>{text}</p><a href={`#oferta-${id}`} className="circle-link" aria-label={`Poznaj ofertę: ${title}`}><ArrowRight size={19}/></a></div>
         </article>)}</div>
@@ -38,17 +39,19 @@ export function SectionScaffolds() {
       </section>
       <section id="doswiadczenie" className="experience-strip scaffold" aria-label="Doświadczenie Impact Lab"><div><strong>Od 2008</strong><p>doświadczenie w rozwoju<br/>ludzi i organizacji</p></div><div><strong>Biznes od środka</strong><p>sprzedaż, obsługa klienta<br/>i rozwiązania HR</p></div><div><strong>Różne perspektywy</strong><p>finanse, farmacja, FMCG,<br/>przemysł i usługi</p></div><div><strong>Realne wyzwania</strong><p>przywództwo, współpraca,<br/>zmiana i innowacje</p></div></section>
       <section id="o-nas" className="founder-section scaffold" aria-labelledby="founder-title">
-        <div className="founder-photo"><Image src="/patrycja-zwierzchowska.jpg" alt="Patrycja Zwierzchowska, założycielka Impact Lab" width={1024} height={1024} sizes="(max-width: 600px) 100vw, 36vw"/></div>
-        <div className="founder-copy"><p className="eyebrow">Ludzie Impact Lab</p><h2 id="founder-title">Doświadczenie.<br/>Perspektywa.<br/>Realny wpływ<span className="accent">.</span></h2><p>Impact Lab powstało z przekonania, że skuteczny rozwój zaczyna się od zrozumienia, co naprawdę wymaga zmiany.</p><p>Łączymy diagnozę, rozwój kompetencji oraz warsztaty i facylitację, aby wypracowywać rozwiązania dopasowane do rzeczywistości organizacji.</p><a href="#patrycja" className="button button-outline">Poznaj założycielkę <ArrowRight size={16}/></a></div>
+        <div className="founder-photo"><Image src={assetPath("/patrycja-zwierzchowska.jpg")} alt="Patrycja Zwierzchowska, założycielka Impact Lab" width={1024} height={1024} sizes="(max-width: 600px) 100vw, 36vw"/></div>
+        <div className="founder-copy"><p className="eyebrow">Ludzie Impact Lab</p><h2 id="founder-title">Doświadczenie.<br/>Perspektywa.<br/>Realny wpływ<span className="accent">.</span></h2><p>Za Impact Lab stoi doświadczenie zdobywane w sprzedaży, obsłudze klienta i HR. Od 2008 roku Patrycja Zwierzchowska rozwija ludzi, zespoły i organizacje.</p><p>Łączymy diagnozę, rozwój kompetencji oraz warsztaty i facylitację, aby wypracowywać rozwiązania dopasowane do rzeczywistości organizacji.</p><a href="#patrycja" className="button button-outline">Poznaj założycielkę <ArrowRight size={16}/></a></div>
         <aside className="founder-note"><span className="quote-mark" aria-hidden="true">“</span><p>Znam biznes od środka. Rozumiem ludzi. Łączę jedno z drugim.</p><div><strong>Patrycja Zwierzchowska</strong><span>Założycielka Impact Lab</span><span>Trenerka · Konsultantka · Facylitatorka</span></div></aside>
       </section>
       <details id="patrycja" className="founder-bio"><summary>Patrycja Zwierzchowska — doświadczenie<ArrowRight size={20}/></summary><p>Moje doświadczenie zawodowe zaczęło się od pracy w sprzedaży i obsłudze klienta, a następnie objęło HR w firmach finansowych i usługowych. Od 2008 roku pracuję jako ekspert rozwoju, rozwijając ludzi, zespoły i organizacje.</p><p>Projektuję i realizuję działania rozwojowe oraz diagnostyczne, wspieram menedżerów i pomagam zespołom wypracowywać rozwiązania odpowiadające na rzeczywiste wyzwania biznesowe.</p><h3>Wybrane projekty z mojego doświadczenia</h3><ul><li>Wdrożenie standardów sprzedaży i zarządzania sprzedażą w branżach FMCG, farmaceutycznej, finansowej i budowlano-przemysłowej.</li><li>Diagnoza DC i programy rozwojowe dla dyrektorów sprzedaży w branży finansowej.</li><li>Projekt i wdrożenie kultury wprowadzania innowacji dla dyrektorów i menedżerów.</li><li>Rozwój różnorodności i współpracy w oparciu o FRIS®.</li></ul></details>
       <ServiceDetails/>
-      <section id="kontakt" className="contact-banner scaffold" aria-labelledby="contact-title"><div><h2 id="contact-title">Porozmawiajmy<br/>o możliwościach<span className="accent">.</span></h2><p>Opowiedz nam o swoich wyzwaniach.<br/>Zobaczmy, jak możemy Cię wesprzeć.</p></div><a className="button button-primary" href="mailto:patrycja@impact-lab.pl">Umów rozmowę <ArrowRight size={17}/></a><div className="contact-details"><a href="mailto:patrycja@impact-lab.pl">patrycja@impact-lab.pl</a><a href="tel:+48606721789">+48 606 721 789</a><span>Warszawa</span></div></section>
+      <section id="kontakt" className="contact-banner scaffold" aria-labelledby="contact-title"><div><h2 id="contact-title">Porozmawiajmy<br/>o możliwościach<span className="accent">.</span></h2><p>Opowiedz nam o swoich wyzwaniach.<br/>Zobaczmy, jak możemy Cię wesprzeć.</p></div><a className="button button-primary" href="mailto:patrycja@impact-lab.pl">Napisz do nas <ArrowRight size={17}/></a><div className="contact-details"><a href="mailto:patrycja@impact-lab.pl">patrycja@impact-lab.pl</a><a href="tel:+48606721789">+48 606 721 789</a><span>Warszawa</span></div></section>
 
     </div>
-    <footer className="site-footer"><div className="footer-inner"><div><Image src="/impact-lab-logo.png" alt="Impact.LAB" width={2728} height={631} sizes="145px"/><p>Ludzie · Pomysły · Zmiana</p></div><nav aria-label="Nawigacja w stopce">{navigation.map(item => <a key={item.href} href={item.href}>{item.label}</a>)}</nav><p className="footer-address">Impact-Lab · Sarmacka 22a/88<br/>02-972 Warszawa · NIP 7712407782</p></div></footer>
+    <footer className="site-footer"><div className="footer-inner"><div><Image src={assetPath("/impact-lab-logo.png")} alt="Impact.LAB" width={2728} height={631} sizes="145px"/><p>Ludzie · Pomysły · Zmiana</p></div><nav aria-label="Nawigacja w stopce">{navigation.map(item => <a key={item.href} href={item.href}>{item.label}</a>)}</nav><p className="footer-address">Impact-Lab · Sarmacka 22a/88<br/>02-972 Warszawa · NIP 7712407782</p></div></footer>
   </>;
 }
+
+
 
 
