@@ -283,6 +283,12 @@ summary:hover { color:var(--magenta); }
   .methods h3 { min-height:42px; }
 }
 
+.hero.hero-centered { grid-template-columns:1fr; min-height:0; text-align:center; }
+.hero-centered .hero-copy { width:100%; max-width:960px; margin-inline:auto; padding:55px 0 65px; pointer-events:auto; }
+.hero-centered .hero-description { max-width:620px; margin-inline:auto; }
+.hero-centered .hero-actions { justify-content:center; }
+@media(max-width:600px) { .hero-centered .hero-copy { padding:35px 0 45px; } }
+
 /* Reference-led orbital hero: a standalone high-quality 3D asset. */
 .orbital-art-image { width:calc(100% + 95px); margin-top:-40px; margin-left:-20px; mask-image:linear-gradient(to right,transparent,#000 8%,#000 95%,transparent); }
 .orbital-art-image img { display:block; width:100%; height:auto; }
