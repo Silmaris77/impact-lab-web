@@ -291,10 +291,38 @@ summary:hover { color:var(--magenta); }
 
 .contact-orbital .contact-details { padding-right:0; }
 .hero.hero-centered { grid-template-columns:1fr; min-height:0; text-align:center; }
-.hero-centered .hero-copy { width:100%; max-width:960px; margin-inline:auto; padding:55px 0 65px; pointer-events:auto; }
+.hero-centered .hero-copy { width:100%; max-width:960px; margin-inline:auto; padding:24px 0 32px; pointer-events:auto; }
 .hero-centered .hero-description { max-width:620px; margin-inline:auto; }
 .hero-centered .hero-actions { justify-content:center; }
 @media(max-width:600px) { .hero-centered .hero-copy { padding:35px 0 45px; } }
+
+/* Keep the introduction and founder together in a typical laptop viewport. */
+@media(min-width:1101px) and (max-height:900px) {
+  .header { height:74px; }
+  .hero-centered .hero-copy { padding:16px 0 24px; }
+  .hero-centered h1 { font-size:44px; line-height:1.06; letter-spacing:-2px; margin-bottom:14px; }
+  .hero-centered .hero-description { max-width:760px; font-size:15px; line-height:1.45; }
+  .hero-centered .hero-actions { margin-top:18px; }
+  .hero-centered .button { min-height:44px; }
+  .scaffolds > .founder-section:first-child { grid-template-columns:34% 38% 25%; align-items:stretch; margin-bottom:24px; }
+  .founder-section .founder-photo { height:310px; }
+  .founder-section .founder-photo img { object-fit:contain; object-position:center; }
+  .founder-section .founder-copy { padding:0 10px; align-self:center; }
+  .founder-section .founder-copy h2 { font-size:28px; line-height:1.1; margin-bottom:10px; letter-spacing:-1px; }
+  .founder-section .founder-copy .eyebrow { margin-bottom:10px; }
+  .founder-section .founder-copy > p:not(.eyebrow) { font-size:14px; line-height:1.45; margin-bottom:10px; }
+  .founder-section .founder-copy .button { min-height:44px; }
+  .founder-section .founder-note { padding:20px 24px; }
+  .founder-section .founder-note > p { font-size:19px; }
+}
+@media(min-width:1101px) and (max-height:680px) {
+  .header { height:64px; }
+  .hero-centered .hero-copy { padding:10px 0 18px; }
+  .hero-centered h1 { font-size:38px; margin-bottom:12px; }
+  .hero-centered .hero-description { font-size:14px; }
+  .hero-centered .hero-actions { margin-top:14px; }
+  .founder-section .founder-photo { height:300px; }
+}
 
 /* Reference-led orbital hero: a standalone high-quality 3D asset. */
 .orbital-art-image { width:calc(100% + 95px); margin-top:-40px; margin-left:-20px; mask-image:linear-gradient(to right,transparent,#000 8%,#000 95%,transparent); }
