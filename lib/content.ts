@@ -1,7 +1,7 @@
 export const navigation = [
-  { label: 'Szkolenia', href: '#szkolenia' },
-  { label: 'Diagnoza', href: '#diagnoza' },
-  { label: 'Projektowanie rozwiązań', href: '#projektowanie' },
+  { label: 'Szkolenia', href: '#oferta-szkolenia' },
+  { label: 'Diagnoza', href: '#oferta-diagnoza' },
+  { label: 'Projektowanie rozwiązań', href: '#oferta-projektowanie' },
   { label: 'O nas', href: '#o-nas' },
   { label: 'Kontakt', href: '#kontakt' },
 ];
