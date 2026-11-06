@@ -11,3 +11,7 @@ Kadrowanie i asymetryczny kształt są realizowane w CSS/SVG. Pliki zdjęć nie 
 Hero hero-people-v1.png — ilustracja wygenerowana przez ImageGen na podstawie wariantu C z dostarczonego pliku Trzy wizje Impact.LAB w magencie.png. Nie przedstawia zespołu Impact Lab. Osobny zasób bez tekstu ani logo; poprzednia grafika orbitalna pozostaje w components/orbital-art.tsx.
 
 Hero hero-orbital-v2.webp — osobny zasób ImageGen odtworzony na podstawie hero w Impact_Lab_Approved_Visual_Reference.png. Bez napisów, logo i elementów interfejsu. Konwersja do WebP bez zmiany kompozycji. Wersja z ludźmi zachowana jako nieużywany zasób do archiwalnego porównania.
+
+Aktualizacja 6.11.2026: hero jest tekstowe, bez ilustracji. Oba powyższe zasoby są nieaktywne.
+
+`public/impact-lab-logo-claim.png` — oryginalny plik `ppt/media/image3.png` ze slajdu 1 prezentacji Patrycji „Impact Lab oferta ogólnaver1.0.pptx”. Claim: „Szkolenia, od których zaczyna się więcej”. Wyodrębniony bez zmiany pikseli, wykorzystany w stopce. Logo w nagłówku oraz portret pozostają oryginalnymi dostarczonymi plikami.

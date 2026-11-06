@@ -11,8 +11,8 @@ export const services = [
   },
   {
     id: 'diagnoza', title: 'Diagnoza',
-    headline: 'Najpierw fakty. Potem decyzje.',
-    description: 'Nie wszystko, co wygląda na problem, jest jego przyczyną. Łączymy dane, obserwacje i perspektywy pracowników, aby zrozumieć organizację, zespoły i ludzi.',
+    headline: 'Najpierw fakty. Potem decyzje. Bo decyzje bez danych to hazard',
+    description: 'Nie wszystko, co wymaga działania, jest widoczne na pierwszy rzut oka. Diagnoza pomaga odkryć to, czego organizacja jeszcze o sobie nie wie, i zamienić intuicję w świadome decyzje rozwojowe.',
     need: 'Gdy wyniki, zaangażowanie lub współpraca budzą pytania, a przed wyborem działań potrzebujesz zrozumieć, co naprawdę stoi za trudnościami.',
     areas: ['Potencjał pracowników i zespołów', 'Efektywność organizacji', 'Kultura odpowiedzialności', 'Bariery współpracy i innowacji'],
     examples: ['Badania pracowników i wywiady ustrukturyzowane', 'Style myślenia FRIS® i odporność psychiczna MTQ48', 'Ocena kompetencji: AC/DC, 360°, People Review', 'Audyt pracy, obserwacja i shadowing'],

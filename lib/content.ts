@@ -2,7 +2,7 @@ export const navigation = [
   { label: 'Szkolenia', href: '#oferta-szkolenia' },
   { label: 'Diagnoza', href: '#oferta-diagnoza' },
   { label: 'Projektowanie rozwiązań', href: '#oferta-projektowanie' },
-  { label: 'O nas', href: '#o-nas' },
+  { label: 'O firmie', href: '#o-nas' },
   { label: 'Kontakt', href: '#kontakt' },
 ];
 export const hero = {

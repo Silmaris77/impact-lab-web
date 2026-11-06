@@ -1,19 +1,16 @@
 import { assetPath } from '@/lib/asset-path';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
-import { navigation } from '@/lib/content';
+import { company, companyFigures, differentiators } from '@/lib/company';
 import { ServiceDetails, CollaborationProcess } from './service-details';
+import { ExperienceDetails } from './experience-details';
+import { ProgramCards } from './program-cards';
+import { Footer } from './footer';
 
 const pillars = [
   { id: 'szkolenia', title: 'Szkolenia', text: 'Rozwijamy kompetencje, które pomagają działać skuteczniej.', detail: 'Projektujemy rozwój wokół realnych wyzwań biznesu. Wzmacniamy kompetencje ludzi, zespołów i całych organizacji.', areas: 'Sprzedaż i relacje z klientami · Przywództwo i zarządzanie · Zmiana i innowacje · Współpraca' },
   { id: 'diagnoza', title: 'Diagnoza', text: 'Najpierw fakty. Potem decyzje. Zaczynamy od przyczyn.', detail: 'Łączymy dane, obserwacje i perspektywy pracowników. Pomagamy zrozumieć organizację, zespoły i ludzi.', areas: 'Potencjał pracowników i zespołów · Badania pracowników · FRIS® · MTQ48 · Efektywność organizacji' },
   { id: 'projektowanie', title: 'Projektowanie rozwiązań', text: 'Pomagamy zespołom tworzyć rozwiązania, które mają sens.', detail: 'Facylitujemy pracę zespołów, pomagając im przełamywać schematy i tworzyć odważne rozwiązania dopasowane do ich rzeczywistości.', areas: 'Modele i standardy pracy · Rozwiązania HR · Kultura odpowiedzialności · Innowacje · Zmiana' },
-];
-const methods = [
-  { title: 'Diagnoza', text: 'Decyzje bez danych to hazard. Najpierw rozumiemy, co naprawdę się dzieje.' },
-  { title: 'Konsultacje i doradztwo', text: 'Doświadczenie to skrót, za który nie musisz płacić własnymi błędami.' },
-  { title: 'Warsztaty', text: 'Mądrość jest w zespole. Angażujemy ludzi w wypracowanie własnych rozwiązań.' },
-  { title: 'Wdrożenia', text: 'Pomagamy przekładać wnioski na codzienną pracę: planujemy działania, wspieramy nowe zachowania i wracamy do ustalonych celów.' },
 ];
 const servicePhotos = [
   { src: '/images/szkolenia.jpg', alt: 'Zdjęcie ilustracyjne: warsztat przy tablicy z karteczkami' },
@@ -27,11 +24,12 @@ export function SectionScaffolds() {
     <div className="scaffolds container">
       <section id="o-nas" className="founder-section scaffold" aria-labelledby="founder-title">
         <div className="founder-photo"><Image src={assetPath("/patrycja-zwierzchowska.jpg")} alt="Patrycja Zwierzchowska, założycielka Impact Lab" width={1024} height={1024} sizes="(max-width: 600px) 100vw, 36vw"/></div>
-        <div className="founder-copy"><p className="eyebrow">Ludzie Impact Lab</p><h2 id="founder-title">Doświadczenie.<br/>Perspektywa.<br/>Realny wpływ<span className="accent">.</span></h2><p>Za Impact Lab stoi doświadczenie zdobywane w sprzedaży, obsłudze klienta i HR. Od 2008 roku Patrycja Zwierzchowska rozwija ludzi, zespoły i organizacje.</p><p>Łączymy diagnozę, rozwój kompetencji oraz warsztaty i facylitację, aby wypracowywać rozwiązania dopasowane do rzeczywistości organizacji.</p><a href="#patrycja" className="button button-outline">Poznaj założycielkę <ArrowRight size={16}/></a></div>
-        <aside className="founder-note"><span className="quote-mark" aria-hidden="true">“</span><p>Znam biznes od środka. Rozumiem ludzi. Łączę jedno z drugim.</p><div><strong>Patrycja Zwierzchowska</strong><span>Założycielka Impact Lab</span><span>Trenerka · Konsultantka · Facylitatorka</span></div></aside>
+        <div className="founder-copy"><p className="eyebrow">O firmie</p><h2 id="founder-title">{company.headline}</h2><p>{company.introduction}</p><a href="#firma" className="button button-outline">Poznaj nas <ArrowRight size={16}/></a></div>
+        <aside className="founder-note"><span className="quote-mark" aria-hidden="true">“</span><p>{company.quote}</p><div><strong>Patrycja Zwierzchowska</strong><span>Założycielka Impact Lab</span><span>Trenerka · Konsultantka · Facylitatorka</span></div></aside>
       </section>
-      <section id="doswiadczenie" className="experience-strip scaffold" aria-label="Doświadczenie Impact Lab"><div><strong>Od 2008</strong><p>doświadczenie w rozwoju<br/>ludzi i organizacji</p></div><div><strong>Biznes od środka</strong><p>sprzedaż, obsługa klienta<br/>i rozwiązania HR</p></div><div><strong>Różne perspektywy</strong><p>finanse, farmacja, FMCG,<br/>przemysł i usługi</p></div><div><strong>Realne wyzwania</strong><p>przywództwo, współpraca,<br/>zmiana i innowacje</p></div></section>
-      <details id="patrycja" className="founder-bio"><summary>Patrycja Zwierzchowska — doświadczenie<ArrowRight size={20}/></summary><p>Moje doświadczenie zawodowe zaczęło się od pracy w sprzedaży i obsłudze klienta, a następnie objęło HR w firmach finansowych i usługowych. Od 2008 roku pracuję jako ekspert rozwoju, rozwijając ludzi, zespoły i organizacje.</p><p>Projektuję i realizuję działania rozwojowe oraz diagnostyczne, wspieram menedżerów i pomagam zespołom wypracowywać rozwiązania odpowiadające na rzeczywiste wyzwania biznesowe.</p><h3>Wybrane projekty z mojego doświadczenia</h3><ul><li>Wdrożenie standardów sprzedaży i zarządzania sprzedażą w branżach FMCG, farmaceutycznej, finansowej i budowlano-przemysłowej.</li><li>Diagnoza DC i programy rozwojowe dla dyrektorów sprzedaży w branży finansowej.</li><li>Projekt i wdrożenie kultury wprowadzania innowacji dla dyrektorów i menedżerów.</li><li>Rozwój różnorodności i współpracy w oparciu o FRIS®.</li></ul></details>
+      <section id="doswiadczenie" className="company-figures scaffold" aria-labelledby="figures-title"><div className="figures-heading"><h2 id="figures-title">Firma w liczbach</h2><p>Doświadczenie zawodowe i projektowe, na którym opiera się Impact Lab.</p></div><div className="experience-strip">{companyFigures.map(figure => <div key={figure.value}><strong>{figure.value}</strong><p>{figure.label}</p></div>)}</div></section>
+      <details id="firma" className="founder-bio"><summary>Poznaj Impact Lab<ArrowRight size={20}/></summary><p>{company.description}</p><p>Wspieramy liderów, którzy chcą więcej niż utrzymania obecnego stanu. Pomagamy szukać możliwości rozwoju, angażować ludzi w zmianę i przekładać pomysły na działania.</p><p>Łączymy diagnozę, konsultacje, warsztaty, szkolenia i wsparcie wdrożeniowe. Najpierw poznajemy kontekst organizacji, potem dobieramy metody i projektujemy proces.</p><a href="#patrycja" className="button button-outline">Poznaj Patrycję Zwierzchowską <ArrowRight size={16}/></a></details>
+      <details id="patrycja" className="founder-bio"><summary>Patrycja Zwierzchowska — projekty, klienci i certyfikaty<ArrowRight size={20}/></summary><p>Moje doświadczenie zawodowe zaczęło się od pracy w sprzedaży i obsłudze klienta, a następnie objęło HR w firmach finansowych i usługowych. Od 2008 roku pracuję jako ekspert rozwoju, rozwijając ludzi, zespoły i organizacje.</p><p>Projektuję i realizuję działania rozwojowe oraz diagnostyczne, wspieram menedżerów i pomagam zespołom wypracowywać rozwiązania odpowiadające na rzeczywiste wyzwania biznesowe.</p><ExperienceDetails/></details>
 
       <section id="oferta" className="offer scaffold" aria-labelledby="offer-title">
         <div className="section-heading"><h2 id="offer-title">Trzy filary, jeden cel <span>— trwała zmiana.</span></h2><a className="button button-outline" href="#wspolpraca">Jak współpracujemy <ArrowRight size={16}/></a></div>
@@ -42,16 +40,17 @@ export function SectionScaffolds() {
         </article>)}</div>
         <ServiceDetails/>
       </section>
+      <ProgramCards/>
       <section id="jak-dzialamy" className="method-section scaffold" aria-labelledby="method-title">
-        <div className="method-intro"><h2 id="method-title">Dlaczego <span className="accent">to działa?</span></h2><p>Najpierw poznajemy kontekst i potrzeby organizacji. Następnie dobieramy metody i projektujemy proces.</p><a href="#wspolpraca" className="button button-outline">Poznaj nasz sposób działania <ArrowRight size={16}/></a></div>
-        <div className="methods">{methods.map(({title,text}) => <article key={title}><h3>{title}</h3><p>{text}</p><span className="method-dot"/></article>)}</div>
+        <div className="method-intro"><h2 id="method-title">Dlaczego <span className="accent">to działa?</span></h2><p>Rozumiemy złożoność organizacji. Łączymy różne perspektywy i angażujemy ludzi w tworzenie rozwiązań.</p><a href="#wspolpraca" className="button button-outline">Poznaj nasz sposób działania <ArrowRight size={16}/></a></div>
+        <div className="methods methods-differentiators">{differentiators.map(({title,text}) => <article key={title}><h3>{title}</h3><p>{text}</p><span className="method-dot" aria-hidden="true"/></article>)}</div>
       </section>
 
       <CollaborationProcess/>
       <section id="kontakt" className="contact-banner contact-orbital scaffold" aria-labelledby="contact-title"><div><h2 id="contact-title">Porozmawiajmy<br/>o możliwościach<span className="accent">.</span></h2><p>Opowiedz nam o swoich wyzwaniach.<br/>Zobaczmy, jak możemy Cię wesprzeć.</p></div><a className="button button-primary" href="mailto:patrycja@impact-lab.pl">Napisz do nas <ArrowRight size={17}/></a><div className="contact-details"><a href="mailto:patrycja@impact-lab.pl">patrycja@impact-lab.pl</a><a href="tel:+48606721789">+48 606 721 789</a><span>Warszawa</span></div></section>
 
     </div>
-    <footer className="site-footer"><div className="footer-inner"><div><Image src={assetPath("/impact-lab-logo.png")} alt="Impact.LAB" width={2728} height={631} sizes="145px"/><p>Ludzie · Pomysły · Zmiana</p></div><nav aria-label="Nawigacja w stopce">{navigation.map(item => <a key={item.href} href={item.href}>{item.label}</a>)}</nav><p className="footer-address">Impact-Lab · Sarmacka 22a/88<br/>02-972 Warszawa · NIP 7712407782</p></div></footer>
+    <Footer/>
   </>;
 }
 
